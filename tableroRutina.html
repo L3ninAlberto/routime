@@ -4,35 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- instanciamos el componente de header -->
+    <script src="./js/headerComponent.js"></script>
+
     <title>Routime</title>
 </head>
 <body>
     
+    <header-component />
+    
     <main>
     
-        <div>
-            <h2>Nombre de rutina</h2>
-            <button></button>
+        <div id="cont-1">
+            <h2 id="titulo-tablero-2">Lunes a Viernes</h2>
+            <img src="./resources/btn-editar.png" class="btn-img">
         </div>
+
+        <a href="./agregarActividad.html" class="btn-agregar">Agregar actividad</a>
+
+        <span class="texto-mis">Mis actividades</span>
     
         <section>
-            <div>
-                <h3>Nombre de la actividad</h3>
-                <button></button>
-            </div>
-            <div>
-                <span>De</span>
-                <span>00:00</span>
-                <span>AM</span>
-                <span>a</span>
-                <span>00:00</span>
-                <span>PM</span>
-            </div>
-        </section>
 
-        <a href="./agregarActividad.html">+</a>
+            <div class="cont-actividad">
+
+                <div class="barra-color"></div>
+
+                <div class="cont-2">
+                    <div class="cont-3">
+                        <h3 class="nombre-actividad">Nombre de la actividad</h3>
+                        <img src="./resources/notificacion-activada.png" class="img-1">
+                    </div>
+                    
+                    <span class="complemento-actividad">De</span>
+                    <span class="hora-actividad">00:00</span>
+                    <span class="periodo-actividad">AM</span>
+                    <span class="complemento-actividad">a</span>
+                    <span class="hora-actividad">00:00</span>
+                    <span class="periodo-actividad">PM</span>
+                </div>
+                
+            </div>
+            
+        </section>
     
     </main>
 
+    <script src="./js/tableroRutina.js"></script>
 </body>
 </html>

@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- instanciamos el componente de header -->
+    <script src="./js/headerComponent.js"></script>
+
     <title>Routime</title>
 </head>
+
 <body>
-    
+
+    <header-component />
+
     <main>
 
         <form>
 
-            <label>Título:</label>
-            <input type="text">
+            <label class="nombre-campo">Título:</label>
+            <input type="text" class="input-titulo borde-input texto-input">
 
-            <label>Horario</label>
-            <span>De</span><input type="time">
-            <span>a</span><input type="time">
 
-            <input type="hidden">
-            <button></button>
+            <label class="nombre-campo">Horario:</label>
+            <div id="cont-4">
+
+                <span class="complemento-actividad">De</span><input type="time" class="borde-input texto-input">
+
+                <span class="complemento-actividad">a</span><input type="time" class="borde-input texto-input">
+
+                <input type="hidden">
+                <img src="./resources/notificacion-desactivada.png" class="btn-img">
+
+            </div>
             
-            <label>Color</label>
-            <input type="radio" name="color">
-            <input type="radio" name="color">
-            <input type="radio" name="color">
-            <input type="radio" name="color">
-            <input type="radio" name="color">
-            <input type="radio" name="color">
 
-            <button><a href="./tableroRutina.html">Cancelar</a></button>
-            <input type="submit" value="Agregar">
+            <label class="nombre-campo">Color:</label>
+            <div id="cont-5">
+
+                <label id="radio-1" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+                <label id="radio-2" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+                <label id="radio-3" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+                <label id="radio-4" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+                <label id="radio-5" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+                <label id="radio-6" class="btn-radio">
+                    <input type="radio" class="input-radio" name="color">
+                    <span class="radio-seleccionado"></span>
+                </label>
+
+            </div>
+            
+            <div id="cont-6">
+                <input type="submit" value="Agregar" id="btn-agregar">
+                <button id="btn-cancelar"><a href="./tableroRutina.html">Cancelar</a></button>
+            </div>
+            
         </form>
 
     </main>
 
+    <script src="./js/agregarActividad.js"></script>
 </body>
 </html>

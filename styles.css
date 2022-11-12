@@ -1,0 +1,267 @@
+body{
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* index.html */
+
+#titulo-pagina{
+    margin: 0px 0px 20px 0px;
+    padding: 2px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: #2093FE;
+}
+
+.btn-agregar{
+    margin-bottom: 20px;
+    padding: 10px 17px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background-color: #00B8E6;
+    border: 0.1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #878787;
+}
+
+.texto-mis{
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.tablero-rutina{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 250px;
+    border: 0.1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #c5c5c5;
+}
+
+.btn-img{
+    width: 25px;
+    height: 25px;
+}
+
+.btn-img:hover{
+    cursor: pointer;
+}
+
+.titulo-tablero-1{
+    font-size: 11px;
+    color: #333333;
+    text-decoration: none;
+}
+
+
+
+/* tableroRutina.html */
+
+#cont-1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+#titulo-tablero-2{
+    margin: 0px;
+    font-size: 20px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.cont-actividad{
+    position: relative;
+    border: 0.1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px #c5c5c5;
+}
+
+.barra-color{
+    position: absolute;
+    width: 4.5px;
+    height: 100%;
+    background-color: #ff6666;
+}
+
+.cont-2{
+    padding: 5px 7px;
+}
+
+.cont-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.nombre-actividad{
+    margin: 0px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.img-1 {
+    width: 20px;
+    height: 20px;
+}
+
+.complemento-actividad{
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.hora-actividad{
+    font-size: 11px;
+    color: #333333;
+}
+
+.periodo-actividad{
+    padding: 1px 3px;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    background-color: #2877C7;
+    border: 0.1px transparent;
+    border-radius: 2px;
+}
+
+
+
+/* agregarActividad.html */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    border: 0.1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px #c5c5c5;
+}
+
+.nombre-campo{
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.input-titulo{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.borde-input{
+    border: 1.5px solid #C1C1C1;
+    border-radius: 4px;
+}
+
+.texto-input{
+    padding: 2px 3px;
+    font-size: 10px;
+    color: #535353;
+}
+
+#cont-4{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+#cont-5{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+.btn-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 0.1px transparent;
+    border-radius: 2px;
+}
+
+.input-radio{
+    display: none;
+}
+
+.radio-seleccionado{
+    width: 100%;
+    height: 100%;
+    outline: 2px solid #c5c5c5;
+    outline-offset: -1px;
+    display: none;
+}
+
+/* cuando el input se seleccione, mostrar el "radio-seleccionado" */
+.input-radio:checked + .radio-seleccionado{
+    display: inline-block;
+}
+
+#radio-1 { background-color: #FF6666;}
+
+#radio-2 { background-color: #ffb366;}
+
+#radio-3 { background-color: #ffff99;}
+
+#radio-4 { background-color: #99ff99;}
+
+#radio-5 { background-color: #99ffff;}
+
+#radio-6 { background-color: #9999ff;}
+
+
+#cont-6 {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 60%;
+}
+
+#btn-agregar{
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #00B8E6;
+    border: 0.1px transparent;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px #c5c5c5;
+}
+
+#btn-cancelar {
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #FF1241;
+    border: 0.1px transparent;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px #c5c5c5;
+}
+
+#btn-cancelar a{
+    text-decoration: none;
+    color: white;
+}
