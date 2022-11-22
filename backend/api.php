@@ -16,6 +16,10 @@ switch ($funcion){
     case "obtenerTodosTablerosRutina":
         echo $TableroRutina -> obtenerTodosTablerosRutina();
         break;
+
+    case "obtenerDatosTablero":
+    echo $TableroRutina -> obtenerDatosTablero($_POST["id_tablero"]);
+    break;
     
     default:
         echo "No se ha especificado una función.";
