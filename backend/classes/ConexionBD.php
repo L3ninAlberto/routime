@@ -1,4 +1,6 @@
 <?php
+// CONEXIÓN A LA BASE DE DATOS
+// necesita ser instanciada para ejecutarse
 
 class ConexionBD{
 
@@ -19,7 +21,8 @@ class ConexionBD{
             // variables en caso de haber error en la conexión
 
             // echo json_encode("Conexión exitosa.");
-            echo "Conexión exitosa.";
+            // echo "Conexión exitosa.";
+            return $conexion;
 
         }catch( PDOException $error ){
 
