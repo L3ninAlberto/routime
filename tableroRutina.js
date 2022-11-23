@@ -17,16 +17,26 @@ fetch("./backend/api.php", {
     .then(res => res.json())
     .then(data => {
 
-        console.log(data[1]);
-
-        // renderizar datos
+        // renderizar nombre del día
         document.getElementById("titulo-tablero-2").textContent = data[0].dia;
 
         const seccion_actividades = document.getElementById("seccion-actividades");
         
-        data[1].forEach(a => {
+
+        // validar si el tablero tiene actividades
+        if ( data[1].length == 0 ) {
             
-            seccion_actividades.innerHTML +=
+            seccion_actividades.innerHTML =
+            `
+                <span id="no-actividades">Aún no hay actividades, ¡Agrega alguna!</span>
+            `
+
+        } else {
+            
+            // renderizar las actividades
+            data[1].forEach(a => {
+
+                seccion_actividades.innerHTML +=
                 `
                     <div class="cont-actividad">
 
@@ -49,6 +59,8 @@ fetch("./backend/api.php", {
                     </div>
                 `;
 
-        });
+            });
+
+        }
         
     });

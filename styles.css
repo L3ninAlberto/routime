@@ -87,6 +87,14 @@ main{
     text-decoration: none;
 }
 
+#no-actividades{
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333333;
+}
+
 .cont-actividad{
     position: relative;
     margin-bottom: 10px;
