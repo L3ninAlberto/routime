@@ -195,7 +195,7 @@ form{
     margin-bottom: 5px;
 }
 
-#cont-5{
+#seccion-inputs-color{
     display: flex;
     justify-content: space-around;
     align-self: center;
@@ -229,18 +229,6 @@ form{
 .input-radio:checked + .radio-seleccionado{
     display: inline-block;
 }
-
-#radio-1 { background-color: #FF6666;}
-
-#radio-2 { background-color: #ffb366;}
-
-#radio-3 { background-color: #ffff99;}
-
-#radio-4 { background-color: #99ff99;}
-
-#radio-5 { background-color: #99ffff;}
-
-#radio-6 { background-color: #9999ff;}
 
 
 #cont-6 {

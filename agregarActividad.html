@@ -5,57 +5,30 @@
 
     <main>
 
-        <form>
+        <form id="form">
 
             <label class="nombre-campo">Título:</label>
-            <input type="text" class="input-titulo borde-input texto-input">
+            <input type="text" class="input-titulo borde-input texto-input" id="input-titulo">
 
 
             <label class="nombre-campo">Horario:</label>
-            <div id="cont-4">
+            <section id="cont-4">
 
-                <span class="complemento-actividad">De</span><input type="time" class="borde-input texto-input">
+                <span class="complemento-actividad">De</span><input type="time" class="borde-input texto-input" id="input-hora-inicial">
 
-                <span class="complemento-actividad">a</span><input type="time" class="borde-input texto-input">
+                <span class="complemento-actividad">a</span><input type="time" class="borde-input texto-input" id="input-hora-final">
 
-                <input type="hidden">
-                <img src="./resources/notificacion-desactivada.png" class="btn-img">
+                <input type="hidden" id="input-notificacion">
+                <img src="./resources/notificacion-0.png" class="btn-img" onclick="seleccionarNotificacion()">
 
-            </div>
+            </section>
             
 
             <label class="nombre-campo">Color:</label>
-            <div id="cont-5">
-
-                <label id="radio-1" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-                <label id="radio-2" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-                <label id="radio-3" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-                <label id="radio-4" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-                <label id="radio-5" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-                <label id="radio-6" class="btn-radio">
-                    <input type="radio" class="input-radio" name="color">
-                    <span class="radio-seleccionado"></span>
-                </label>
-
-            </div>
+            <section id="seccion-inputs-color"></section>
             
             <div id="cont-6">
-                <input type="submit" value="Agregar" id="btn-agregar">
+                <input type="submit" value="Agregar" id="btn-agregar" onclick="agregarActividad()">
                 <button id="btn-cancelar"><a href="./tableroRutina.html">Cancelar</a></button>
             </div>
             
@@ -63,6 +36,6 @@
 
     </main>
 
-    <script src="./js/agregarActividad.js"></script>
+    <script src="./agregarActividad.js"></script>
 </body>
 </html>
