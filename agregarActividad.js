@@ -97,3 +97,20 @@ const calcularHoraFormato12Horas = (hora, minutos) => {
     return hora + ":" + minutos + " " + periodo;
 
 }
+
+const seleccionarNotificacion = () => {
+
+    // invertir valor del input notificación dependiendo si es 0 o 1, y cambiar la imagen de la campana
+    if (document.getElementById("input-notificacion").value == "0") {
+    
+        document.getElementById("input-notificacion").value = "1";
+        document.getElementById("campana-notificacion").setAttribute("src", "./resources/notificacion-1.png");
+
+    } else {
+        
+        document.getElementById("input-notificacion").value = "0";
+        document.getElementById("campana-notificacion").setAttribute("src", "./resources/notificacion-0.png");
+
+    }
+
+}
