@@ -21,7 +21,7 @@ fetch("./backend/api.php", {
             seccion_inputs_color.innerHTML +=
                 `
                     <label class="btn-radio" style="background-color: ${d.color}">
-                        <input type="radio" class="input-radio" name="color" value="${d.id_color_actividad}">
+                        <input type="radio" class="input-radio" name="color" value="${d.id_color_actividad}" onclick="seleccionarColor(this.value)">
                         <span class="radio-seleccionado"></span>
                     </label>
                 `
@@ -113,4 +113,9 @@ const seleccionarNotificacion = () => {
 
     }
 
+}
+
+
+const seleccionarColor = (color) => {
+    document.getElementById("input-color").value = color;
 }
