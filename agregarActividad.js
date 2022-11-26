@@ -93,7 +93,15 @@ const agregarActividad = () => {
         body: formData
     })
         .then(res => res.json())
-        .then(r => console.log(r));
+        .then(r => {
+
+            if (r.codigo == "1") {
+                window.location.href = "tableroRutina.html";
+            } else {
+                document.getElementById("msj-actividad-no-registrada").style.display = "inline";
+            }
+
+        });
 
 }
 
