@@ -263,3 +263,9 @@ form{
     text-decoration: none;
     color: white;
 }
+
+#msj-actividad-no-registrada{
+    display: none;
+    font-weight: bold;
+    color: #FF1241;
+}
