@@ -61,8 +61,40 @@ const agregarActividad = () => {
     const hora_i_completa = calcularHoraFormato12Horas(hora_i, minutos_i);
     const hora_f_completa = calcularHoraFormato12Horas(hora_f, minutos_f);
 
-    console.log(hora_i_completa);
-    console.log(hora_f_completa);
+    // separar valores de hora
+    const datos_hora_i_completa = hora_i_completa.split(" ");
+    const hora_inicial = datos_hora_i_completa[0];
+    const periodo_hora_inicial = datos_hora_i_completa[1];
+
+    const datos_hora_f_completa = hora_f_completa.split(" ");
+    const hora_final = datos_hora_f_completa[0];
+    const periodo_hora_final = datos_hora_f_completa[1];
+
+
+    const notificacion = document.getElementById("input-notificacion").value;
+    const id_color = document.getElementById("input-color").value;
+    
+    const id_tablero_rutina = localStorage.getItem("id_tablero_rutina");
+    
+
+    const formData = new FormData();
+    formData.append("funcion", "registrarActividad");
+    formData.append("titulo", titulo);
+    formData.append("hora_inicial", hora_inicial);
+    formData.append("periodo_hora_inicial", periodo_hora_inicial);
+    formData.append("hora_final", hora_final);
+    formData.append("periodo_hora_final", periodo_hora_final);
+    formData.append("notificacion", notificacion);
+    formData.append("fk_color_actividad", id_color);
+    formData.append("fk_tablero_rutina", id_tablero_rutina);
+
+    fetch("./backend/api.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(res => res.json())
+        .then(r => console.log(r));
+
 }
 
 const calcularHoraFormato12Horas = (hora, minutos) => {

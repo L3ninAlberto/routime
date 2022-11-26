@@ -5,10 +5,12 @@ require_once("./conectarBD.php");
 
 require_once("./classes/TableroRutina.php");
 require_once("./classes/ColorActividad.php");
+require_once("./classes/Actividad.php");
 
 // instanciamos la clase TableroRutina y le mandamos la variable $conexión de "conectarBD.php"
 $TableroRutina = new TableroRutina($conexionBD);
 $ColorActividad = new ColorActividad($conexionBD);
+$Actividad = new Actividad($conexionBD);
 
 
 
@@ -27,6 +29,11 @@ switch ($funcion){
     // ColorActividad
     case "obtenerTodosColoresActividad":
         echo $ColorActividad -> obtenerTodosColoresActividad();
+        break;
+    
+    // Actividad
+    case "registrarActividad":
+        echo $Actividad -> registrarActividad($_POST);
         break;
     
     default:
