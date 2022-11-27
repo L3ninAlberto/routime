@@ -7,6 +7,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 90vh;
 }
 
 
@@ -14,9 +15,9 @@ main{
 
 #titulo-pagina{
     margin: 0px 0px 20px 0px;
-    padding: 2px;
+    padding: 5px;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     color: white;
     background-color: #2093FE;
 }
@@ -24,7 +25,7 @@ main{
 .btn-agregar{
     margin-bottom: 20px;
     padding: 10px 17px;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -32,13 +33,6 @@ main{
     border: 0.1px solid transparent;
     border-radius: 5px;
     box-shadow: 1px 1px 2px #878787;
-}
-
-.texto-mis{
-    margin-bottom: 5px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #333333;
 }
 
 .tablero-rutina{
@@ -62,7 +56,7 @@ main{
 }
 
 .titulo-tablero-1{
-    font-size: 11px;
+    font-size: 13px;
     color: #333333;
     text-decoration: none;
 }
@@ -71,20 +65,21 @@ main{
 
 /* tableroRutina.html */
 
-#cont-1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    width: 200px;
-    margin-bottom: 20px;
+#seccion-actividades{
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 7px;
 }
 
-#titulo-tablero-2{
-    margin: 0px;
-    font-size: 20px;
+#seccion-actividades::-webkit-scrollbar{
+    display: none;
+}
+
+.texto-mis-actividades {
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: bold;
     color: #333333;
-    text-decoration: none;
 }
 
 #no-actividades{
@@ -92,12 +87,12 @@ main{
     margin-top: 20px;
     font-size: 17px;
     font-weight: bold;
-    color: #333333;
+    color: #535353;
 }
 
 .cont-actividad{
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 0.1px solid transparent;
     border-radius: 5px;
     box-shadow: 1px 2px 2px #c5c5c5;
@@ -105,46 +100,48 @@ main{
 
 .barra-color{
     position: absolute;
-    width: 4.5px;
+    width: 7px;
     height: 100%;
 }
 
 .cont-2{
-    padding: 5px 7px;
+    padding: 5px 10px;
 }
 
 .cont-3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 300px;
+    margin-bottom: 5px;
 }
 
 .nombre-actividad{
     margin: 0px;
-    font-size: 14px;
+    font-size: 17px;
     color: #333333;
 }
 
 .img-1 {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .complemento-actividad{
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
-    color: #333333;
+    color: #535353;
 }
 
 .hora-actividad{
-    font-size: 11px;
+    font-size: 14px;
     color: #333333;
 }
 
 .periodo-actividad{
+    margin-right: 5px;
     padding: 1px 3px;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background-color: #2877C7;
@@ -160,6 +157,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 400px;
     padding: 10px 20px;
     border: 0.1px solid transparent;
     border-radius: 5px;
@@ -167,14 +165,14 @@ form{
 }
 
 .nombre-campo{
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
     color: #333333;
 }
 
-.input-titulo{
+#input-titulo{
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .borde-input{
@@ -184,7 +182,7 @@ form{
 
 .texto-input{
     padding: 2px 3px;
-    font-size: 10px;
+    font-size: 17px;
     color: #535353;
 }
 
@@ -192,8 +190,15 @@ form{
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
+
+.complemento-actividad-form{
+    font-size: 15px;
+    font-weight: bold;
+    color: #535353;
+}
+
 
 #seccion-inputs-color{
     display: flex;
@@ -207,10 +212,14 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 0.1px transparent;
     border-radius: 2px;
+}
+
+.btn-radio:hover{
+    cursor: pointer;
 }
 
 .input-radio{
@@ -236,27 +245,29 @@ form{
     justify-content: space-around;
     align-self: center;
     width: 60%;
+    margin-top: 20px
+}
+
+.btn-form-agregar-actividad{
+    padding: 9px 14px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    border: 0.1px transparent;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px #c5c5c5;
 }
 
 #btn-agregar{
-    padding: 5px 8px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
     background-color: #00B8E6;
-    border: 0.1px transparent;
-    border-radius: 3px;
-    box-shadow: 1px 2px 2px #c5c5c5;
+}
+
+#btn-agregar:hover{
+    cursor: pointer;
 }
 
 #btn-cancelar {
-    padding: 5px 8px;
-    font-size: 12px;
-    font-weight: bold;
     background-color: #FF1241;
-    border: 0.1px transparent;
-    border-radius: 3px;
-    box-shadow: 1px 2px 2px #c5c5c5;
 }
 
 #btn-cancelar a{

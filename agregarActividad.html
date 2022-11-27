@@ -8,31 +8,31 @@
         <form id="form">
 
             <label class="nombre-campo">Título:</label>
-            <input type="text" class="input-titulo borde-input texto-input" id="input-titulo">
+            <input type="text" class="borde-input texto-input" id="input-titulo" required>
 
 
             <label class="nombre-campo">Horario:</label>
             <section id="cont-4">
 
-                <span class="complemento-actividad">De</span>
-                <input type="time" class="borde-input texto-input" id="input-hora-inicial">
+                <span class="complemento-actividad-form">De</span>
+                <input type="time" class="borde-input texto-input" id="input-hora-inicial" required>
 
-                <span class="complemento-actividad">a</span>
-                <input type="time" class="borde-input texto-input" id="input-hora-final">
+                <span class="complemento-actividad-form">a</span>
+                <input type="time" class="borde-input texto-input" id="input-hora-final" required>
 
                 <input type="hidden" id="input-notificacion" value="0">
-                <img src="./resources/notificacion-0.png" id="campana-notificacion" alt="Campana_notificación" class="btn-img" onclick="seleccionarNotificacion()">
 
             </section>
             
 
             <label class="nombre-campo">Color:</label>
             <section id="seccion-inputs-color"></section>
-            <input type="hidden" id="input-color">
+            <input type="hidden" id="input-color" value="1">
             
             <div id="cont-6">
-                <input type="submit" value="Agregar" id="btn-agregar" onclick="agregarActividad()">
-                <button id="btn-cancelar"><a href="./tableroRutina.html">Cancelar</a></button>
+                <input type="submit" value="Agregar" id="btn-agregar" class="btn-form-agregar-actividad" onclick="agregarActividad()">
+
+                <button id="btn-cancelar" class="btn-form-agregar-actividad"><a href="./tableroRutina.html">Cancelar</a></button>
             </div>
             
         </form>

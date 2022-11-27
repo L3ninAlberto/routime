@@ -46,7 +46,6 @@ const agregarActividad = () => {
 
     const campo_hora_inicial = document.getElementById("input-hora-inicial").value;
     const campo_hora_final = document.getElementById("input-hora-final").value;
-    
 
     // separar todo el valor del campo en horas y minutos a través de ":"
     const datos_hora_inicial = campo_hora_inicial.split(":");
@@ -75,33 +74,38 @@ const agregarActividad = () => {
     const id_color = document.getElementById("input-color").value;
     
     const id_tablero_rutina = localStorage.getItem("id_tablero_rutina");
-    
 
-    const formData = new FormData();
-    formData.append("funcion", "registrarActividad");
-    formData.append("titulo", titulo);
-    formData.append("hora_inicial", hora_inicial);
-    formData.append("periodo_hora_inicial", periodo_hora_inicial);
-    formData.append("hora_final", hora_final);
-    formData.append("periodo_hora_final", periodo_hora_final);
-    formData.append("notificacion", notificacion);
-    formData.append("fk_color_actividad", id_color);
-    formData.append("fk_tablero_rutina", id_tablero_rutina);
 
-    fetch("./backend/api.php", {
-        method: "POST",
-        body: formData
-    })
-        .then(res => res.json())
-        .then(r => {
+    // validar si algunos campos importantes tienen datos antes de registrarse
+    if (titulo != "" && campo_hora_inicial != "" && campo_hora_final != "") {
 
-            if (r.codigo == "1") {
-                window.location.href = "tableroRutina.html";
-            } else {
-                document.getElementById("msj-actividad-no-registrada").style.display = "inline";
-            }
+        const formData = new FormData();
+        formData.append("funcion", "registrarActividad");
+        formData.append("titulo", titulo);
+        formData.append("hora_inicial", hora_inicial);
+        formData.append("periodo_hora_inicial", periodo_hora_inicial);
+        formData.append("hora_final", hora_final);
+        formData.append("periodo_hora_final", periodo_hora_final);
+        formData.append("notificacion", notificacion);
+        formData.append("fk_color_actividad", id_color);
+        formData.append("fk_tablero_rutina", id_tablero_rutina);
 
-        });
+        fetch("./backend/api.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(r => {
+
+                if (r.codigo == "1") {
+                    window.location.href = "tableroRutina.html";
+                } else {
+                    document.getElementById("msj-actividad-no-registrada").style.display = "inline";
+                }
+
+            });
+
+    }
 
 }
 

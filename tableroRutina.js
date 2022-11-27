@@ -1,10 +1,5 @@
-// cambiar el título de la página
-const tituloPagina = document.getElementById("titulo-pagina");
-tituloPagina.textContent = "Tablero de rutina";
-
 // obtener los datos del tablero de rutina a partir de su ID
 const id_tablero_rutina = localStorage.getItem("id_tablero_rutina");
-
 
 const formData = new FormData();
 formData.append("funcion", "obtenerDatosTablero");
@@ -17,11 +12,12 @@ fetch("./backend/api.php", {
     .then(res => res.json())
     .then(data => {
 
-        // renderizar nombre del día
-        document.getElementById("titulo-tablero-2").textContent = data[0].dia;
+        // cambiar el título de la página por el nombre del día
+        const tituloPagina = document.getElementById("titulo-pagina");
+        tituloPagina.textContent = data[0].dia;
 
-        const seccion_actividades = document.getElementById("seccion-actividades");
         
+        const seccion_actividades = document.getElementById("seccion-actividades");
 
         // validar si el tablero tiene actividades
         if ( data[1].length == 0 ) {
@@ -45,7 +41,6 @@ fetch("./backend/api.php", {
                         <div class="cont-2">
                             <div class="cont-3">
                                 <h3 class="nombre-actividad">${a.titulo}</h3>
-                                <img src="./resources/notificacion-${a.notificacion}.png" class="img-1">
                             </div>
                             
                             <span class="complemento-actividad">De</span>
