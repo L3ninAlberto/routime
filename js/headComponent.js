@@ -23,8 +23,8 @@ class headComponent extends HTMLElement{
             </head>
             <body>
 
-                <header> 
-                    <h1 id="titulo-pagina"></h1> 
+                <header id="header-app"> 
+                    <h1 id="titulo-pagina"></h1>
                 </header>
         `
     }

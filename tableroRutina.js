@@ -12,6 +12,14 @@ fetch("./backend/api.php", {
     .then(res => res.json())
     .then(data => {
 
+        // renderizar el nombre del tablero y el botón para regresar al index
+        document.getElementById("header-app").innerHTML = 
+            `
+            <h1 id="titulo-pagina"></h1>
+            
+            <img src="./resources/btn-regresar.png" alt="btn-regresar" id="btn-regresar" onclick="regresarAindex()">
+            `
+
         // cambiar el título de la página por el nombre del día
         const tituloPagina = document.getElementById("titulo-pagina");
         tituloPagina.textContent = data[0].dia;
@@ -59,3 +67,6 @@ fetch("./backend/api.php", {
         }
         
     });
+
+
+const regresarAindex = () => window.location.href = "index.html";
