@@ -35,7 +35,7 @@ class TableroRutina{
 
 
 
-        $sql2 = "SELECT a.*, c.color FROM actividad a INNER JOIN color_actividad c ON a.fk_color_actividad = c.id_color_actividad WHERE fk_tablero_rutina = $id_tablero_rutina ORDER BY a.id_actividad ASC";
+        $sql2 = "SELECT a.*, c.color FROM actividad a INNER JOIN color_actividad c ON a.fk_color_actividad = c.id_color_actividad WHERE fk_tablero_rutina = $id_tablero_rutina ORDER BY a.hora_inicial ASC";
 
         $query2 = $this -> conexionBD -> prepare($sql2);
 
