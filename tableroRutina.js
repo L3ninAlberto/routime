@@ -72,8 +72,6 @@ fetch("./backend/api.php", {
 
 
 const obtenerHorasYperiodos = (campo_hora_inicial, campo_hora_final) => {
-    console.log(campo_hora_inicial);
-    console.log(campo_hora_final);
 
     // separar todo el valor del campo en horas y minutos a través de ":"
     const datos_hora_inicial = campo_hora_inicial.split(":");
