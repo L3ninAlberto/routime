@@ -47,7 +47,6 @@ const agregarActividad = () => {
     const campo_hora_inicial = document.getElementById("input-hora-inicial").value;
     const campo_hora_final = document.getElementById("input-hora-final").value;
 
-    const notificacion = document.getElementById("input-notificacion").value;
     const id_color = document.getElementById("input-color").value;
     
     const id_tablero_rutina = localStorage.getItem("id_tablero_rutina");
@@ -61,7 +60,6 @@ const agregarActividad = () => {
         formData.append("titulo", titulo);
         formData.append("hora_inicial", campo_hora_inicial);
         formData.append("hora_final", campo_hora_final);
-        formData.append("notificacion", notificacion);
         formData.append("fk_color_actividad", id_color);
         formData.append("fk_tablero_rutina", id_tablero_rutina);
 
@@ -79,24 +77,6 @@ const agregarActividad = () => {
                 }
 
             });
-
-    }
-
-}
-
-
-const seleccionarNotificacion = () => {
-
-    // invertir valor del input notificación dependiendo si es 0 o 1, y cambiar la imagen de la campana
-    if (document.getElementById("input-notificacion").value == "0") {
-    
-        document.getElementById("input-notificacion").value = "1";
-        document.getElementById("campana-notificacion").setAttribute("src", "./resources/notificacion-1.png");
-
-    } else {
-        
-        document.getElementById("input-notificacion").value = "0";
-        document.getElementById("campana-notificacion").setAttribute("src", "./resources/notificacion-0.png");
 
     }
 

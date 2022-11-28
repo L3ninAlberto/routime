@@ -12,16 +12,15 @@ class Actividad {
     function registrarActividad($POST){
 
         // return json_encode($POST);
-        $sql = "INSERT INTO actividad VALUES(null,?,?,?,?,?,?)";
+        $sql = "INSERT INTO actividad VALUES(null,?,?,?,?,?)";
         
         $query = $this -> conexionBD -> prepare($sql);
 
         $query -> bindParam(1, $POST["titulo"]);
         $query -> bindParam(2, $POST["hora_inicial"]);
         $query -> bindParam(3, $POST["hora_final"]);
-        $query -> bindParam(4, $POST["notificacion"]);
-        $query -> bindParam(5, $POST["fk_tablero_rutina"]);
-        $query -> bindParam(6, $POST["fk_color_actividad"]);
+        $query -> bindParam(4, $POST["fk_tablero_rutina"]);
+        $query -> bindParam(5, $POST["fk_color_actividad"]);
 
         if($query -> execute()){
 
