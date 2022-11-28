@@ -47,29 +47,6 @@ const agregarActividad = () => {
     const campo_hora_inicial = document.getElementById("input-hora-inicial").value;
     const campo_hora_final = document.getElementById("input-hora-final").value;
 
-    // separar todo el valor del campo en horas y minutos a través de ":"
-    const datos_hora_inicial = campo_hora_inicial.split(":");
-    const hora_i = datos_hora_inicial[0];
-    const minutos_i = datos_hora_inicial[1];
-
-    const datos_hora_final = campo_hora_final.split(":");
-    const hora_f = datos_hora_final[0];
-    const minutos_f = datos_hora_final[1];
-
-    // calcular hora en formato 12 horas
-    const hora_i_completa = calcularHoraFormato12Horas(hora_i, minutos_i);
-    const hora_f_completa = calcularHoraFormato12Horas(hora_f, minutos_f);
-
-    // separar valores de hora
-    const datos_hora_i_completa = hora_i_completa.split(" ");
-    const hora_inicial = datos_hora_i_completa[0];
-    const periodo_hora_inicial = datos_hora_i_completa[1];
-
-    const datos_hora_f_completa = hora_f_completa.split(" ");
-    const hora_final = datos_hora_f_completa[0];
-    const periodo_hora_final = datos_hora_f_completa[1];
-
-
     const notificacion = document.getElementById("input-notificacion").value;
     const id_color = document.getElementById("input-color").value;
     
@@ -82,10 +59,8 @@ const agregarActividad = () => {
         const formData = new FormData();
         formData.append("funcion", "registrarActividad");
         formData.append("titulo", titulo);
-        formData.append("hora_inicial", hora_inicial);
-        formData.append("periodo_hora_inicial", periodo_hora_inicial);
-        formData.append("hora_final", hora_final);
-        formData.append("periodo_hora_final", periodo_hora_final);
+        formData.append("hora_inicial", campo_hora_inicial);
+        formData.append("hora_final", campo_hora_final);
         formData.append("notificacion", notificacion);
         formData.append("fk_color_actividad", id_color);
         formData.append("fk_tablero_rutina", id_tablero_rutina);
@@ -109,38 +84,6 @@ const agregarActividad = () => {
 
 }
 
-const calcularHoraFormato12Horas = (hora, minutos) => {
-
-    var periodo;
-
-    if (hora > 12) {
-        // son horas como 15:00 (las 3 de la tarde)
-
-        periodo = "PM";
-
-        hora -= 12;
-
-        // "-=" es la "asignación de resta", que resta 12 a la variable "hora" y el resultado lo guarda en la misma variable. La resta obtiene la diferencia entre las horas dando su valor en formato 12 horas. P. ej: 15 - 12 = 3 (las 3 de la tarde)
-
-    } else if (hora < 12) {
-        // son horas entre 00:00 y 12:00, el rango de las horas de la mañana
-
-        periodo = "AM";
-
-        if (hora == 0) {
-            // debemos cambiar el valor de la variable a 12, porque no existe 00:00 en formato 12 horas, sólo el número 12
-            hora = 12;
-        }
-
-    } else {
-        // "hora" es igual a 12, son las 12 de la tarde
-        periodo = "PM";
-    }
-
-    // retornar hora completa
-    return hora + ":" + minutos + " " + periodo;
-
-}
 
 const seleccionarNotificacion = () => {
 
