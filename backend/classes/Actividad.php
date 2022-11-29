@@ -38,6 +38,31 @@ class Actividad {
 
         }
 
+    }
+
+    function eliminarActividad($id_actividad){
+
+        $sql = "DELETE FROM actividad WHERE id_actividad = ?";
+        
+        $query = $this -> conexionBD -> prepare($sql);
+
+        $query -> bindParam(1, $id_actividad);
+
+        if($query -> execute()){
+
+            return json_encode([
+                "codigo" => 1,
+                "mensaje" => "Actividad eliminada."
+            ]);
+
+        }else{
+
+            return json_encode([
+                "codigo" => 0,
+                "mensaje" => "Eliminación fallida."
+            ]);
+
+        }
 
     }
 

@@ -35,6 +35,10 @@ switch ($funcion){
     case "registrarActividad":
         echo $Actividad -> registrarActividad($_POST);
         break;
+        
+    case "eliminarActividad":
+        echo $Actividad -> eliminarActividad($_POST["id_actividad"]);
+        break;
     
     default:
         echo "No se ha especificado una función.";

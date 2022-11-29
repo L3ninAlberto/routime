@@ -51,6 +51,8 @@ fetch("./backend/api.php", {
                         <div class="cont-2">
                             <div class="cont-3">
                                 <h3 class="nombre-actividad">${a.titulo}</h3>
+                                
+                                <img src="./resources/btn-eliminar.png" alt="btn_eliminar_actividad" class="btn-eliminar-actividad" onclick="eliminarActividad('${a.id_actividad}', '${a.titulo}')">
                             </div>
                             
                             <span class="complemento-actividad">De</span>
@@ -142,3 +144,33 @@ const calcularHoraFormato12Horas = (hora, minutos) => {
 
 
 const regresarAindex = () => window.location.href = "index.html";
+
+const eliminarActividad = (id_actividad, titulo_actividad) => {
+    
+    if (window.confirm(`¿Eliminar actividad: "${titulo_actividad}"?`)) {
+        
+        const formData = new FormData();
+        formData.append("funcion", "eliminarActividad");
+        formData.append("id_actividad", id_actividad);
+
+        fetch("./backend/api.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(r => {
+
+                if (r.codigo == "1") {
+                    
+                    // recargar página
+                    window.location.href = "tableroRutina.html";
+
+                } else {
+                    alert("Actividad no eliminada, inténtalo de nuevo.");
+                }
+
+            });
+
+    }
+
+}

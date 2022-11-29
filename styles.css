@@ -139,6 +139,15 @@ main{
     color: #333333;
 }
 
+.btn-eliminar-actividad{
+    width: 30px;
+    height: 30px;
+}
+
+.btn-eliminar-actividad:hover{
+    cursor: pointer;
+}
+
 .img-1 {
     width: 24px;
     height: 24px;
